@@ -8,9 +8,9 @@ engine=create_engine(db_conn_string,connect_args={"ssl":                        
 def load_inventory():
   result_dicts = []
   with engine.connect() as conn:
-    result = conn.execute(text("select * from cars"))
+      result = conn.execute(text("select * from cars"))
   
-    for row in result.all():
-      result_dicts.append(row._asdict())
+      for row in result.all():
+          result_dicts.append(row._asdict())
   return result_dicts
 #print( result_dicts)
