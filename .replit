@@ -4,3 +4,7 @@ channel = "stable-24_05"
 
 language = "python3"
 run = "python app.py"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
