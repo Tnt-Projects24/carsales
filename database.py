@@ -18,10 +18,11 @@ def load_inventory():
 
 
 ## This is to add the cars into the cars table.
-def add_cars():
+def add_cars(parnewcar):
   # get the cars details from the form
   # crete a sql statement to save it to the database.
-  insert_stmt = "insert into cars (name, year, price) values (:name, :year, :price)"
+ 
+  insert_stmt = "insert into cars (make, year, price) values (:name, :year, :price)"
   with engine.connect() as conn:
-    result = conn.execute(text(insert_stmt, name="test", year=2023, price=1000"))
+    result = conn.execute(text(insert_stmt, name=parnewcar["make"], year=parnewcar["year"], price=parnewcar["price"]))
   

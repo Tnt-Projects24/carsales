@@ -10,6 +10,16 @@ def home():
 
 @app.route('/add_car')
 def add_car() methods:
+
+if request.method == 'POST':
+  # Handle POST request
+  # Get the values from the submitted forms
+  # make, model,year, price
+  new_car = request.form.to_dict();
+  add_cars(new_car)
+else:
+  # Handle GET request
+  return render_template('add_cars.html')
   
 @app.route('/inventory')
 def inventory():
