@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template, request
-from database import load_inventory
+from database import load_inventory,add_cars
 print ("hello")
 app = Flask(__name__)
 
@@ -8,15 +8,17 @@ def home():
     return render_template('home.html')
     #return 'index.html'
 
-@app.route('/add_car')
-def add_car(methods=['GET', 'POST']) :
+@app.route('/add_car',methods=['GET', 'POST'])
+def add_car() :
 
     if request.method == 'POST':
       # Handle POST request
       # Get the values from the submitted forms
       # make, model,year, price
       new_car = request.form.to_dict();
+      #print (new_car)
       add_cars(new_car)
+      return render_template('add_car.html')
     else:
       # Handle GET request
       return render_template('add_car.html')
