@@ -8,6 +8,9 @@ def home():
     return render_template('home.html')
     #return 'index.html'
 
+@app.route('/add_car')
+def add_car() methods:
+  
 @app.route('/inventory')
 def inventory():
     #items =[
