@@ -8,7 +8,7 @@ def home():
     return render_template('home.html')
     #return 'index.html'
 
-@app.route('/add_car',methods=['GET', 'POST'])
+@app.route('/purchase',methods=['GET', 'POST'])
 def add_car() :
 
     if request.method == 'POST':
